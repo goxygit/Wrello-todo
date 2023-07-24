@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Wrello-todo/static/css/main.2eb70e20.css",
-    "main.js": "/Wrello-todo/static/js/main.6bc753ba.js",
+    "main.css": "/Wrello-todo/static/css/main.1d5c651d.css",
+    "main.js": "/Wrello-todo/static/js/main.0f29ab10.js",
     "static/js/787.9538e3f3.chunk.js": "/Wrello-todo/static/js/787.9538e3f3.chunk.js",
     "static/media/background.jpg": "/Wrello-todo/static/media/background.6e545103dc7af35005e1.jpg",
     "index.html": "/Wrello-todo/index.html",
-    "main.2eb70e20.css.map": "/Wrello-todo/static/css/main.2eb70e20.css.map",
-    "main.6bc753ba.js.map": "/Wrello-todo/static/js/main.6bc753ba.js.map",
+    "main.1d5c651d.css.map": "/Wrello-todo/static/css/main.1d5c651d.css.map",
+    "main.0f29ab10.js.map": "/Wrello-todo/static/js/main.0f29ab10.js.map",
     "787.9538e3f3.chunk.js.map": "/Wrello-todo/static/js/787.9538e3f3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2eb70e20.css",
-    "static/js/main.6bc753ba.js"
+    "static/css/main.1d5c651d.css",
+    "static/js/main.0f29ab10.js"
   ]
 }
