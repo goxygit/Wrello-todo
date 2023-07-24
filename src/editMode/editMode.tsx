@@ -77,7 +77,7 @@ const EditModeComponent = () => {
                         <img draggable={false} className={s.cartNameImg} src={kartName} alt="" />
                         {
                             isEditName
-                                ? <textarea value={nameValue} onChange={(e) => setNameValue(e.currentTarget.value)} ref={textareaRef} className={s.nameTextArea}></textarea>
+                                ? <textarea autoFocus={true} ref={textareaRef} onFocus={adjustTextareaEditNameHeight} value={nameValue} onChange={(e) => setNameValue(e.currentTarget.value)} className={s.nameTextArea}></textarea>
                                 : <div onClick={() => setIsEditName(true)} className={s.cartName}>{editElement && editElement.item.text}</div>
 
                         }

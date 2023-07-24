@@ -158,7 +158,7 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter')
                                     if (addNewTodoValue.length > 0) {
-                                        dispatch(addList({ id, text: addNewTodoValue }));
+                                        dispatch(addList({ id: todos.indexOf(boards), text: addNewTodoValue }));
                                         setAddNewTodoValue('');
                                     }
                             }}
@@ -173,8 +173,9 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
                         <div className={s.buttonBlock}>
                             <button
                                 onClick={() => {
+
                                     if (addNewTodoValue.length > 0) {
-                                        dispatch(addList({ id, text: addNewTodoValue }));
+                                        dispatch(addList({ id: todos.indexOf(boards), text: addNewTodoValue }));
                                         setAddNewTodoValue('');
                                     }
                                 }}
@@ -208,7 +209,7 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
                             <img draggable={false} className={s.closeImgDropDown} onClick={() => setIsDropDownMenu(false)} src={close} alt="" />
                         </div>
                         <div className={s.dropDownMenuContent}>
-                            <div onClick={() => dispatch(deleteTodo({ index }))} className={s.actions}>
+                            <div onClick={() => dispatch(deleteTodo({ index: todos.indexOf(boards) }))} className={s.actions}>
                                 Видалити цей список
                             </div>
                         </div>

@@ -83,6 +83,12 @@
     word-wrap: break-word;
     word-break: break-all;
     user-select: none;
+    position: relative;
+}
+.lists:hover .penImg{
+    display: block;
+    position: absolute;
+    right: 8px;
 }
 .addBoardBlock{
     display: flex;
@@ -197,9 +203,7 @@
 .enterBoard{
     background-color: #4a6c88;
 }
-.lists:hover .penImg{
-    display: block;
-}
+
 .penImg{
     cursor: pointer;
     display: none;

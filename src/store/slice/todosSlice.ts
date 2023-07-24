@@ -73,7 +73,7 @@ export const todoSlice = createSlice({
             state.todos.splice(action.payload.index, 1)
         },
         addList(state, action) {
-            const id = action.payload.id - 1
+            const id = action.payload.id
             state.listId++
             const obj = {
                 itemsId: state.listId,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './App.module.css';
 import Header from './header/header';
 import AddTodoBoard from './addNewTodo/addNewTodo';
@@ -18,6 +18,7 @@ const App = () => {
   const [isDragging, setIsDragging] = useState(false)
   const dispatch = useAppDispatch();
   const { draggedEl, todos, itemBoard, itemIndex, editMode } = useSelector((state: RootState) => state.todos)
+  const [todo, setTodo] = useState(todos)
   const drop = (e: any, item: itemsType | null = null,) => {
     debugger
     if (itemIndex !== null) {
@@ -31,6 +32,9 @@ const App = () => {
   };
   const dragLeave = (e: any) => {
   }
+  useEffect(() => {
+    setTodo(todos)
+  }, [todos])
   return (
     <div onDrop={(e) => {
       drop(e,)
@@ -43,7 +47,7 @@ const App = () => {
       }
       <Header />
       <div className={s.content}>
-        {todos.map((obj, i) =>
+        {todo.map((obj, i) =>
           <TodoBoard dragLeave={dragLeave} setIsDragging={setIsDragging} isDragging={isDragging} key={obj.id} drop={drop} isNewEl={isNewEl} index={i} boards={obj} {...obj} />
         )}
         <AddTodoBoard />
