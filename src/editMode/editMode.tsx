@@ -67,13 +67,15 @@ const EditModeComponent = () => {
         setCommentValue('')
     }
     const handleAddProfile = () => {
-        dispatch(addComments(commentValue))
-        setCommentValue('')
+        if (profileValue && profileValue.length > 0) {
+            dispatch(setEditProfile(profileValue))
+            dispatch(setIsProfile(true))
+        }
     }
     const handleTextareaKeyDown = (e: any) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            handleAddComment();
+            handleAddProfile();
         }
         const handleTextareaKeyDown = (e: any) => {
             if (e.key === 'Enter') {
@@ -113,14 +115,7 @@ const EditModeComponent = () => {
 
                                         : <div>
                                             <div ref={profileRef}>
-                                                < textarea onKeyDown={(e) => {
-                                                    if (e.key === 'Enter') {
-                                                        if (profileValue && profileValue.length > 0) {
-                                                            dispatch(setEditProfile(profileValue))
-                                                            dispatch(setIsProfile(true))
-                                                        }
-                                                    }
-                                                }} value={profileValue} onChange={(e) => setProfileValue(e.currentTarget.value)} onInput={adjustTextareaAddProfileHeight} id='profile' placeholder='Додати детальний опис...' className={s.cartProfileTextarea}></textarea>
+                                                < textarea onKeyDown={handleAddProfile} value={profileValue} onChange={(e) => setProfileValue(e.currentTarget.value)} onInput={adjustTextareaAddProfileHeight} id='profile' placeholder='Додати детальний опис...' className={s.cartProfileTextarea}></textarea>
                                                 {profileValue && profileValue.length > 0 &&
                                                     <div className={s.buttonBlock}>
                                                         <button onClick={() => {
@@ -169,4 +164,5 @@ const EditModeComponent = () => {
             </div >
         )
     }
-    export default EditModeComponent
+}
+export default EditModeComponent
