@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Wrello-todo/static/css/main.95525f46.css",
+    "main.js": "/Wrello-todo/static/js/main.c7fc37fe.js",
+    "static/js/787.9538e3f3.chunk.js": "/Wrello-todo/static/js/787.9538e3f3.chunk.js",
+    "static/media/background.jpg": "/Wrello-todo/static/media/background.6e545103dc7af35005e1.jpg",
+    "index.html": "/Wrello-todo/index.html",
+    "main.95525f46.css.map": "/Wrello-todo/static/css/main.95525f46.css.map",
+    "main.c7fc37fe.js.map": "/Wrello-todo/static/js/main.c7fc37fe.js.map",
+    "787.9538e3f3.chunk.js.map": "/Wrello-todo/static/js/787.9538e3f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95525f46.css",
+    "static/js/main.c7fc37fe.js"
+  ]
+}
