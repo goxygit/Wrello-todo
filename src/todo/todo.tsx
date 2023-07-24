@@ -30,7 +30,8 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
     const dispatch = useAppDispatch();
     const containerRef = useRef<HTMLDivElement>(null);
     const dropDownRef = useRef<HTMLDivElement>(null);
-
+    const myTextareaRef = useRef<HTMLTextAreaElement>(null);
+    const parentRef = useRef<HTMLDivElement>(null);
     const dragOver = (e: any, item: itemsType) => {
         e.preventDefault()
 
@@ -84,8 +85,8 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
 
 
     const adjustTextareaNameHeight = () => {
-        let textarea = document.getElementById("myTextarea");
-        let parent = document.getElementById("parent");
+        let textarea = myTextareaRef.current;
+        let parent = parentRef.current;
         if (textarea && parent) {
             textarea.style.height = "auto";
             textarea.style.height = textarea.scrollHeight + "px";
@@ -99,6 +100,22 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
             textarea.style.height = textarea.scrollHeight + "px";
         }
     };
+    const handleAddTodo = () => {
+        if (addNewTodoValue.length > 0) {
+            dispatch(addList({ id: todos.indexOf(boards), text: addNewTodoValue }));
+            setAddNewTodoValue('');
+        }
+    };
+
+    const handleTextareaKeyDown = (e: any) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleAddTodo();
+        }
+    };
+    const handleDragStart = (e: any) => {
+        e.preventDefault();
+    };
 
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos))
@@ -110,15 +127,16 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
             }}
             className={s.back}>
             <div className={s.backgroundTodo}>
-                <div id='parent' className={s.todoName}>
+                <div ref={parentRef} className={s.todoName}>
                     <textarea
+                        onDragStart={handleDragStart}
                         onBlur={() => {
                             if (todoNameValue.length > 0) {
                                 dispatch(setTitle({ id, title: todoNameValue }));
                             }
                         }}
                         onInput={adjustTextareaNameHeight}
-                        id='myTextarea'
+                        ref={myTextareaRef}
                         className={s.textareaTodoName}
                         onChange={(e) => {
                             setTodoNameValue(e.target.value);
@@ -155,13 +173,9 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
                 {isAddNewList ? (
                     <div ref={containerRef} className={s.addNewTodoBlock}>
                         <textarea
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter')
-                                    if (addNewTodoValue.length > 0) {
-                                        dispatch(addList({ id: todos.indexOf(boards), text: addNewTodoValue }));
-                                        setAddNewTodoValue('');
-                                    }
-                            }}
+                            onDragStart={handleDragStart}
+                            draggable={false}
+                            onKeyDown={handleTextareaKeyDown}
                             value={addNewTodoValue}
                             onChange={(e) => setAddNewTodoValue(e.target.value)}
                             autoFocus={true}
@@ -172,13 +186,7 @@ const TodoBoard: React.FC<PropsType> = ({ dragLeave, setIsDragging, isDragging, 
                         />
                         <div className={s.buttonBlock}>
                             <button
-                                onClick={() => {
-
-                                    if (addNewTodoValue.length > 0) {
-                                        dispatch(addList({ id: todos.indexOf(boards), text: addNewTodoValue }));
-                                        setAddNewTodoValue('');
-                                    }
-                                }}
+                                onClick={handleAddTodo}
                                 className={s.button}
                             >
                                 <span className={s.buttonText}>Додати картку</span>

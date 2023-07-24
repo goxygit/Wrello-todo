@@ -77,7 +77,8 @@
     width: 256px;
     box-sizing: border-box;
     border-radius: 8px;
-    align-items: center;
+    flex-direction: column; 
+    justify-content: start;
     font-size: 14px;
     min-height: 20px;
     word-wrap: break-word;
@@ -89,6 +90,24 @@
     display: block;
     position: absolute;
     right: 8px;
+}
+.profileImg{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+.commentImg{
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+.imgBlock{
+    display: flex;
+    padding-top: 8px;
+
+}
+.commentsBlock{
+    display: flex;
 }
 .addBoardBlock{
     display: flex;

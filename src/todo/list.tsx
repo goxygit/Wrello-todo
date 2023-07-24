@@ -4,7 +4,8 @@ import pen from '../assets/img/pen.png'
 import classNames from 'classnames';
 import { useRef, useState } from 'react';
 import { useAppDispatch } from '../store/store';
-import close from '../assets/img/close-editing.png';
+import eye from '../assets/img/eye.png';
+import comment from '../assets/img/comments.png'
 type propsType = {
     obj: itemsType
     index: number
@@ -45,6 +46,17 @@ const List: React.FC<propsType> = ({ num, obj, boards, dragStart, dragLeave, dra
                 dispatch(setEditElement({ item: obj, itemIndex: num, boardIndex: index }))
                 dispatch(setIsEditMode(true))
             }} className={s.penImg} src={pen} alt="" />
+            <div className={s.imgBlock}>
+                {obj.profile && <img draggable={false} className={s.profileImg} src={eye} alt="" />}
+                {obj.comments.length > 0 &&
+                    <div className={s.commentsBlock}>
+                        <img draggable={false} className={s.commentImg} src={comment} alt="" />
+                        <span>{obj.comments.length}</span>
+                    </div>
+                }
+
+            </div>
+
         </div>
 
 

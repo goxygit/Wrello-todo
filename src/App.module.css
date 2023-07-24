@@ -23,6 +23,7 @@ html{
 }
 textarea{
   font-family: 'Roboto', sans-serif;
+  -webkit-user-drag: none;
 }
 .back{
   height: 100%;
