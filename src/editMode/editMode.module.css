@@ -1,0 +1,178 @@
+.editModBackground{
+    background-color:rgba(0, 0, 0, 0.5) ;
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100%;
+    z-index: 1000;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button{
+    cursor: pointer;
+  }
+  .editBackground{
+    width: 768px;
+    min-height: 842px;
+    background-color: #282E33;
+    border-radius: 16px;
+  
+  }
+  .editWindow{
+    width: 100%;
+    height: 100%;
+    min-height: 842px;
+    background-color: #A1BDD914;
+    position: relative;
+    border-radius: 16px;
+    color: #b6c2cf;
+  }
+  .closeImg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 50%;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  .header{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding:12px 40px 8px 56px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cartNameImg{
+    position: absolute;
+    top: 28px;
+    left: 18px;
+    width: 18px;
+    height: 18px;
+  }
+  .cartName{
+    padding-top:16px ;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .cartList{
+    margin: 8px 8px 4px 2px;
+    font-size: 14px;
+  }
+  .cartContent{
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px 8px 16px;
+    width: 576px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .cartProfile{
+    margin: 0 0 28px 40px;
+    padding: 8px 0;
+    user-select: none;
+  }
+  .cartProfileName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .stringImg{
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 18px;
+  }
+  .cartProfileTextarea{
+    width: 100%;
+    padding: 8px 12px;
+    color: #b6c2cf;
+    background-color: #282E33;
+    border-radius: 6px;
+    min-height: 56px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+  .commImg{
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 18px;
+  }
+  .cartComment{
+    margin: 0 0 0 40px;
+    padding: 8px 0;
+    user-select: none;
+  }
+  .cartCommName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .cartCommTextarea{
+    width: 100%;
+    padding: 8px 12px;
+    color: #b6c2cf;
+    background-color: #282E33;
+    border-radius: 6px;
+    min-height: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+.buttonAdd{
+  width: min-content;
+  background-color: #579DFF;
+  border-radius: 4px;
+  height: 32px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  margin: 0 6px 0 0;
+  border: none;
+}
+.buttonNoAdd{
+  width: min-content;
+  border-radius: 4px;
+  height: 32px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  color: #b6c2cf;
+}
+.buttonBlock{
+  display: flex;
+  margin-top: 8px;
+}
+.nameTextArea{
+  border: none;
+  resize: none;
+  border-radius: 4px;
+  background-color: #22272b;
+  box-shadow: inset 0 0 0 2px #85b8ff;
+  outline: none;
+  font-size: 20px;
+  color: #b6c2cf;
+  line-height: 24px;
+}
+.profile{
+  width: 100%;
+  height: auto;
+  font-size: 15px;
+}
+.comments{
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}

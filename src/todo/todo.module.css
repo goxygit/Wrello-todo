@@ -1,0 +1,273 @@
+.backgroundTodo{
+    position: relative;
+
+    background-color: #101204;
+    width: 272px;
+    border-radius: 16px;
+    padding: 8px 0 12px 0;
+    color: #B6C2CF;
+    height: auto;
+    margin: 0px 12px ;
+    max-height: 745px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.todoList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 12px;
+    padding: 0 8px;
+}
+.textareaTodoName:focus{
+    background-color: #22272b;
+    outline: 2px solid #388bff;
+}
+.textareaTodoName{
+    background-color: #101204;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 28px; 
+    max-height: 200px; 
+    overflow: auto;
+    border: none;
+    resize: none;
+    color: #B6C2CF;
+    font-size: 15px;
+}
+.plusImg{
+    height: 28px;
+    width: 28px;
+}
+.todoName{
+    position: relative;
+    height: min-content;
+    min-height: 48px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    max-height: 200px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+.optionsImg{
+    height: 18px;
+    width: 18px;
+    margin: 0 0 0 8px;
+    padding: 8px;
+    border-radius: 6px;
+}
+.optionsImg:hover{
+    background-color: rgba(102, 106, 110, 0.226);
+    cursor: pointer;
+}
+.beforeTextArea{
+    height: 28px;
+    width: 100%;
+}
+.lists{
+    display: flex;
+    justify-content: space-between;
+    margin: 4px;
+    background-color: #22272B;
+    padding: 8px 26px 8px 12px;
+    width: 256px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    align-items: center;
+    font-size: 14px;
+    min-height: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    user-select: none;
+}
+.addBoardBlock{
+    display: flex;
+    align-items: center;
+    height: 44px;
+    box-sizing: border-box;
+}
+.addBoard{
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: 4px 8px 4px 6px;
+    width: 228px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #b6c2cf;
+    margin: 8px 0 8px 8px;
+    font-size: 14px;
+}
+.addBoard:hover{
+    background-color: rgba(102, 106, 110, 0.226);
+    cursor: pointer;
+}
+.addNewTodoTextarea{
+    padding: 8px 8px 4px 12px;
+    height: 70px;
+    width: 256px;
+    box-sizing: border-box;
+    background-color: #22272B;
+    color:#B6C2CF;
+    border: none;
+    border-radius: 12px;
+    max-height: 176px;
+    resize: none;
+    outline: none;
+
+}
+.addNewTodoBlock{
+    margin: 8px 4px 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttonText{
+    
+    border-radius: 4px;
+    width: min-content;
+    box-sizing: border-box;
+}
+.buttonBlock{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    padding: 8px 12px 0 12px;
+    box-sizing: border-box;
+}
+.buttonImg{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.button{
+    padding: 6px 12px;
+    background-color: #388bff;
+    height: 32px;
+    border: none;
+    margin-right: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.divBeforeList{
+    width: min-content;
+    height: min-content;
+}
+.draggedEl {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.newElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff5733; /* Встановіть потрібний колір фону */
+    color: white; /* Встановіть колір тексту */
+    padding: 8px; /* Встановіть потрібне падіння */
+    border-radius: 8px; /* Встановіть потрібний радіус кутів */
+    width: 256px; /* Встановіть ширину таку ж, як s.lists */
+    font-size: 14px; /* Встановіть потрібний розмір шрифту */
+    box-sizing: border-box;
+    margin: 4px;
+  
+}
+.dragEl{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.drag{
+    transform:rotate(10deg);
+}
+.enterBoard{
+    background-color: #4a6c88;
+}
+.lists:hover .penImg{
+    display: block;
+}
+.penImg{
+    cursor: pointer;
+    display: none;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.penImg:hover{
+    background-color: rgba(102, 106, 110, 0.2);
+}
+.editTodoBlock{
+    z-index: 9999;
+    position: absolute
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+.buttonsItem{
+    height: 32px;
+    width: min-content;
+    padding: 6px 12px 6px 10px;
+    box-sizing: border-box;
+}
+.backDrop{
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    z-index: 2000;
+    background-color: #282E33;
+    box-shadow: inset 0px 0px 0px 1px #BCD6F01F, 0px 8px 12px #0304045C, 0px 0px 1px #03040480;
+    border-radius: 6px;
+}
+.dropDownMenuHeader{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.back{
+    position: relative;
+}
+.dropDownMenu{
+    color: #b6c2cf;
+    width: 100%;
+    height: 100%;
+    background-color: #A1BDD914;
+}
+.dropDownMenuContent{
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px 12px;
+}
+.actions{
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.closeImgDropDown{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    cursor: pointer;
+}
